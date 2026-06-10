@@ -1,467 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wealth with KB | From Financial Chaos to Financial Clarity</title>
 
   <style>
-    :root{
-      --rose:#d48ca6;
-      --deep:#a65d78;
-      --cream:#fff8f5;
-      --blush:#f8e6ee;
-      --charcoal:#2d2d2d;
-      --gray:#6e6e6e;
-      --white:#ffffff;
-      --gold:#c8a45d;
+    :root {
+      --cream: #fff8f5;
+      --blush: #f8e6ee;
+      --rose: #d48ca6;
+      --deep: #a65d78;
+      --charcoal: #2d2d2d;
+      --gray: #6e6e6e;
+      --white: #ffffff;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Arial,sans-serif;
-      background:var(--cream);
-      color:var(--charcoal);
-      line-height:1.7;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:99;
-      background:rgba(255,248,245,.96);
-      border-bottom:1px solid #efd5de;
-      padding:18px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      backdrop-filter:blur(10px);
+    html {
+      scroll-behavior: smooth;
     }
 
-    .nav img{
-      height:72px;
-      object-fit:contain;
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
     }
 
-    .nav-links{
-      display:flex;
-      gap:24px;
-      font-size:14px;
-      font-weight:700;
-      color:var(--charcoal);
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .nav-links a:hover{color:var(--deep)}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-    .hero{
-      min-height:90vh;
-      padding:90px 8%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
+    .nav {
+      background: rgba(255, 248, 245, 0.96);
+      border-bottom: 1px solid #efd5de;
+      padding: 16px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav img {
+      height: 68px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--deep);
+    }
+
+    .hero {
+      min-height: 86vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 8%;
       background:
-        radial-gradient(circle at top left, #f2cfdb 0%, transparent 35%),
-        radial-gradient(circle at bottom right, #fff 0%, transparent 35%),
-        linear-gradient(135deg,var(--cream),var(--blush));
+        radial-gradient(circle at top left, #f3cdda 0%, transparent 35%),
+        linear-gradient(135deg, var(--cream), var(--blush));
     }
 
-    .hero-inner{
-      max-width:950px;
-      background:rgba(255,255,255,.58);
-      padding:50px 38px;
-      border-radius:34px;
-      border:1px solid #efd5de;
-      box-shadow:0 25px 70px rgba(45,45,45,.09);
+    .hero-box {
+      max-width: 900px;
+      background: rgba(255,255,255,0.7);
+      padding: 50px 36px;
+      border-radius: 32px;
+      border: 1px solid #efd5de;
+      box-shadow: 0 25px 70px rgba(45,45,45,0.09);
     }
 
-    .hero-logo{
-      max-width:430px;
-      margin:0 auto 25px;
+    .hero-logo {
+      max-width: 380px;
+      margin: 0 auto 24px;
     }
 
-    .eyebrow{
-      color:var(--deep);
-      text-transform:uppercase;
-      letter-spacing:2.4px;
-      font-size:13px;
-      font-weight:800;
-      margin-bottom:14px;
+    .eyebrow {
+      color: var(--deep);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
 
-    h1,h2,h3{
-      font-family:Georgia,serif;
-      line-height:1.15;
+    h1, h2, h3 {
+      font-family: Georgia, serif;
+      line-height: 1.15;
     }
 
-    h1{
-      font-size:clamp(42px,7vw,78px);
-      margin-bottom:12px;
+    h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      margin-bottom: 12px;
     }
 
-    .tagline{
-      font-family:Georgia,serif;
-      color:var(--deep);
-      font-size:clamp(22px,3vw,32px);
-      margin-bottom:22px;
-      font-style:italic;
+    .tagline {
+      font-family: Georgia, serif;
+      color: var(--deep);
+      font-size: clamp(22px, 3vw, 32px);
+      font-style: italic;
+      margin-bottom: 22px;
     }
 
-    .hero p{
-      max-width:720px;
-      margin:0 auto 32px;
-      font-size:18px;
-      color:var(--gray);
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      color: var(--gray);
+      font-size: 18px;
     }
 
-    .buttons{
-      display:flex;
-      justify-content:center;
-      gap:14px;
-      flex-wrap:wrap;
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    .btn{
-      display:inline-block;
-      padding:14px 26px;
-      border-radius:999px;
-      font-weight:800;
-      transition:.25s ease;
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.25s ease;
     }
 
-    .btn-primary{
-      background:var(--deep);
-      color:white;
-      box-shadow:0 12px 28px rgba(166,93,120,.25);
+    .btn-primary {
+      background: var(--deep);
+      color: white;
+      box-shadow: 0 12px 28px rgba(166, 93, 120, 0.25);
     }
 
-    .btn-secondary{
-      background:white;
-      border:1px solid var(--deep);
-      color:var(--deep);
+    .btn-secondary {
+      background: white;
+      color: var(--deep);
+      border: 1px solid var(--deep);
     }
 
-    .btn:hover{transform:translateY(-2px)}
-
-    .trust{
-      background:white;
-      padding:28px 8%;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-      text-align:center;
-      color:var(--deep);
-      font-weight:800;
-      border-top:1px solid #efd5de;
-      border-bottom:1px solid #efd5de;
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
-    section{padding:85px 8%}
-
-    .section-head{
-      text-align:center;
-      max-width:800px;
-      margin:0 auto 48px;
+    .trust {
+      background: white;
+      padding: 28px 8%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      text-align: center;
+      color: var(--deep);
+      font-weight: 800;
+      border-top: 1px solid #efd5de;
+      border-bottom: 1px solid #efd5de;
     }
 
-    .section-head h2{
-      font-size:clamp(34px,5vw,52px);
-      margin-bottom:14px;
+    section {
+      padding: 80px 8%;
     }
 
-    .section-head p{
-      color:var(--gray);
-      font-size:18px;
+    .section-head {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 46px;
     }
 
-    .who-grid{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:18px;
+    .section-head h2 {
+      font-size: clamp(34px, 5vw, 50px);
+      margin-bottom: 14px;
     }
 
-    .who-card{
-      background:white;
-      padding:24px 18px;
-      border-radius:24px;
-      text-align:center;
-      border:1px solid #efd5de;
-      box-shadow:0 14px 35px rgba(45,45,45,.06);
-      font-weight:800;
-      color:var(--deep);
+    .section-head p {
+      color: var(--gray);
+      font-size: 18px;
     }
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
     }
 
-    .card{
-      background:white;
-      padding:30px;
-      border-radius:28px;
-      border:1px solid #efd5de;
-      box-shadow:0 16px 40px rgba(45,45,45,.07);
-      transition:.25s ease;
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
 
-    .card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 22px 50px rgba(45,45,45,.12);
+    .card, .mini-card, .faq-item, .step {
+      background: white;
+      border: 1px solid #efd5de;
+      border-radius: 24px;
+      box-shadow: 0 14px 35px rgba(45,45,45,0.06);
     }
 
-    .icon{
-      font-size:34px;
-      margin-bottom:12px;
+    .mini-card {
+      padding: 24px 18px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--deep);
     }
 
-    .card h3{
-      color:var(--deep);
-      font-size:25px;
-      margin-bottom:10px;
+    .card {
+      padding: 30px;
+      transition: 0.25s ease;
     }
 
-    .card p{
-      color:var(--gray);
-      font-size:15px;
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 50px rgba(45,45,45,0.12);
     }
 
-    .results{
-      background:white;
+    .icon {
+      font-size: 34px;
+      margin-bottom: 12px;
     }
 
-    .result-grid{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:18px;
+    .card h3 {
+      color: var(--deep);
+      font-size: 25px;
+      margin-bottom: 10px;
     }
 
-    .result{
-      background:var(--cream);
-      border:1px solid #efd5de;
-      padding:24px;
-      border-radius:22px;
-      text-align:center;
-      font-weight:800;
-      color:var(--deep);
+    .card p {
+      color: var(--gray);
+      font-size: 15px;
     }
 
-    .about{
-      background:var(--blush);
+    .results {
+      background: white;
     }
 
-    .about-grid{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:52px;
-      align-items:center;
+    .about {
+      background: var(--blush);
     }
 
-    .about-photo{
-      border-radius:34px;
-      box-shadow:0 25px 65px rgba(45,45,45,.15);
-      max-height:640px;
-      width:100%;
-      object-fit:cover;
-      object-position:center;
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 52px;
+      align-items: center;
     }
 
-    .about h2{
-      font-size:clamp(36px,5vw,54px);
-      margin-bottom:18px;
+    .about-photo {
+      width: 100%;
+      max-height: 620px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 34px;
+      box-shadow: 0 25px 65px rgba(45,45,45,0.15);
     }
 
-    .about p{
-      color:var(--gray);
-      margin-bottom:16px;
-      font-size:17px;
+    .about h2 {
+      font-size: clamp(36px, 5vw, 54px);
+      margin-bottom: 18px;
     }
 
-    .why-list{
-      margin-top:26px;
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:16px;
+    .about p {
+      color: var(--gray);
+      margin-bottom: 16px;
+      font-size: 17px;
     }
 
-    .why-item{
-      background:white;
-      padding:18px;
-      border-radius:18px;
-      border:1px solid #efd5de;
-      color:var(--deep);
-      font-weight:800;
+    .why-list {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
-    .process{
-      background:white;
+    .why-item {
+      background: white;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid #efd5de;
+      color: var(--deep);
+      font-weight: 800;
     }
 
-    .steps{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:20px;
+    .process {
+      background: white;
     }
 
-    .step{
-      background:var(--cream);
-      padding:28px;
-      border-radius:26px;
-      text-align:center;
-      border:1px solid #efd5de;
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
-    .num{
-      height:46px;
-      width:46px;
-      border-radius:50%;
-      background:var(--deep);
-      color:white;
-      display:grid;
-      place-items:center;
-      margin:0 auto 14px;
-      font-weight:800;
+    .step {
+      padding: 28px;
+      text-align: center;
+      background: var(--cream);
     }
 
-    .step h3{
-      color:var(--deep);
-      font-size:24px;
-      margin-bottom:8px;
+    .num {
+      height: 46px;
+      width: 46px;
+      border-radius: 50%;
+      background: var(--deep);
+      color: white;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 14px;
+      font-weight: 800;
     }
 
-    .step p{
-      color:var(--gray);
-      font-size:15px;
+    .step h3 {
+      color: var(--deep);
+      font-size: 24px;
+      margin-bottom: 8px;
     }
 
-    .faq{
-      background:var(--cream);
+    .step p {
+      color: var(--gray);
+      font-size: 15px;
     }
 
-    .faq-wrap{
-      max-width:900px;
-      margin:auto;
-      display:grid;
-      gap:16px;
+    .faq-wrap {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      gap: 16px;
     }
 
-    .faq-item{
-      background:white;
-      padding:24px;
-      border-radius:22px;
-      border:1px solid #efd5de;
-      box-shadow:0 12px 30px rgba(45,45,45,.05);
+    .faq-item {
+      padding: 24px;
     }
 
-    .faq-item h3{
-      color:var(--deep);
-      font-size:22px;
-      margin-bottom:8px;
+    .faq-item h3 {
+      color: var(--deep);
+      font-size: 22px;
+      margin-bottom: 8px;
     }
 
-    .faq-item p{
-      color:var(--gray);
+    .faq-item p {
+      color: var(--gray);
     }
 
-    .cta{
-      text-align:center;
-      background:linear-gradient(135deg,var(--deep),var(--rose));
-      color:white;
-      padding:90px 8%;
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, var(--deep), var(--rose));
+      color: white;
+      padding: 90px 8%;
     }
 
-    .cta h2{
-      font-size:clamp(36px,5vw,56px);
-      margin-bottom:16px;
+    .cta h2 {
+      font-size: clamp(36px, 5vw, 56px);
+      margin-bottom: 16px;
     }
 
-    .cta p{
-      max-width:700px;
-      margin:0 auto 30px;
-      font-size:18px;
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 18px;
     }
 
-    .cta .btn{
-      background:white;
-      color:var(--deep);
+    .cta .btn {
+      background: white;
+      color: var(--deep);
     }
 
-    footer{
-      background:var(--charcoal);
-      color:white;
-      padding:48px 8%;
+    footer {
+      background: var(--charcoal);
+      color: white;
+      padding: 48px 8%;
     }
 
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.2fr 1fr 1fr;
-      gap:32px;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 32px;
     }
 
-    footer h3{
-      font-family:Georgia,serif;
-      color:#f7dbe4;
-      margin-bottom:12px;
-      font-size:24px;
+    footer h3 {
+      font-family: Georgia, serif;
+      color: #f7dbe4;
+      margin-bottom: 12px;
+      font-size: 24px;
     }
 
-    footer p,footer a{
-      display:block;
-      color:#e8e8e8;
-      margin-bottom:8px;
-      font-size:14px;
+    footer p, footer a {
+      display: block;
+      color: #e8e8e8;
+      margin-bottom: 8px;
+      font-size: 14px;
     }
 
-    .copy{
-      border-top:1px solid rgba(255,255,255,.14);
-      margin-top:30px;
-      padding-top:20px;
-      text-align:center;
-      color:#cfcfcf;
-      font-size:13px;
+    .copy {
+      border-top: 1px solid rgba(255,255,255,0.14);
+      margin-top: 30px;
+      padding-top: 20px;
+      text-align: center;
+      color: #cfcfcf;
+      font-size: 13px;
     }
 
-    @media(max-width:1000px){
-      .trust,.cards,.who-grid,.result-grid,.steps,.footer-grid{
-        grid-template-columns:1fr 1fr;
+    @media(max-width: 1000px) {
+      .trust, .grid-5, .grid-3, .steps, .footer-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .about-grid{
-        grid-template-columns:1fr;
+      .about-grid {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media(max-width:700px){
-      .nav{
-        flex-direction:column;
-        gap:14px;
+    @media(max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        gap: 14px;
       }
 
-      .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:14px;
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
       }
 
-      .trust,.cards,.who-grid,.result-grid,.steps,.footer-grid,.why-list{
-        grid-template-columns:1fr;
+      .trust, .grid-5, .grid-3, .steps, .footer-grid, .why-list {
+        grid-template-columns: 1fr;
       }
 
-      .hero{
-        padding:55px 5%;
+      .hero {
+        padding: 55px 5%;
       }
 
-      .hero-inner{
-        padding:34px 22px;
+      .hero-box {
+        padding: 34px 22px;
       }
 
-      section{
-        padding:65px 6%;
+      section {
+        padding: 65px 6%;
       }
     }
   </style>
@@ -469,253 +459,253 @@
 
 <body>
 
-<nav class="nav">
-  <img src="Logo.png" alt="Wealth with KB logo">
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#process">Process</a>
-    <a href="#faq">FAQ</a>
-    <a href="https://forms.gle/aezg5iboGmVgBV8W8" target="_blank">Book a Call</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-inner">
-    <img class="hero-logo" src="Logo.png" alt="Wealth with KB logo">
-    <div class="eyebrow">Boutique bookkeeping & financial organization</div>
-    <h1>Financial Support That Makes Sense</h1>
-    <div class="tagline">From Financial Chaos to Financial Clarity</div>
-    <p>
-      Wealth with KB helps individuals and small business owners organize their finances,
-      clean up bookkeeping, and build confidence with their money through practical,
-      judgment-free support.
-    </p>
-    <div class="buttons">
-      <a class="btn btn-primary" href="https://forms.gle/aezg5iboGmVgBV8W8" target="_blank">Book a Free Clarity Call</a>
-      <a class="btn btn-secondary" href="#services">Explore Services</a>
+  <nav class="nav">
+    <img src="logo.png" alt="Wealth with KB logo">
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://forms.gle/aezg5iboGmVgBV8W8" target="_blank">Book a Call</a>
     </div>
-  </div>
-</header>
+  </nav>
 
-<div class="trust">
-  <div>Xero Certified Advisor</div>
-  <div>QuickBooks Online Certified ProAdvisor</div>
-  <div>Bookkeeping & Cleanup Projects</div>
-  <div>Personal Finance Support</div>
-</div>
-
-<section>
-  <div class="section-head">
-    <h2>Who We Help</h2>
-    <p>
-      Whether you're trying to get organized, catch up, or finally understand where your money is going,
-      Wealth with KB helps you find the next best step.
-    </p>
-  </div>
-
-  <div class="who-grid">
-    <div class="who-card">Small Business Owners</div>
-    <div class="who-card">Service-Based Businesses</div>
-    <div class="who-card">Beauty Professionals</div>
-    <div class="who-card">Freelancers & Creatives</div>
-    <div class="who-card">Individuals Seeking Clarity</div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="section-head">
-    <h2>Services designed around real life.</h2>
-    <p>
-      No confusing packages. No judgment. Just practical financial support based on what you actually need.
-    </p>
-  </div>
-
-  <div class="cards">
-    <div class="card">
-      <div class="icon">💰</div>
-      <h3>The Money Reset</h3>
-      <p>Personal finance support to organize your bills, review spending habits, and create a clearer plan for your money.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">📊</div>
-      <h3>The Business Reset</h3>
-      <p>Financial organization and bookkeeping support for business owners who need structure, clarity, and confidence.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🧹</div>
-      <h3>The Cleanup Project</h3>
-      <p>Catch-up bookkeeping and reconciliation support for businesses that have fallen behind or need a fresh start.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">📈</div>
-      <h3>The Growth Plan</h3>
-      <p>Ongoing monthly support to help you stay organized, informed, and prepared year-round.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">✨</div>
-      <h3>Custom Packages</h3>
-      <p>Every financial situation is different. Custom solutions are available based on your goals and level of support needed.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">☕</div>
-      <h3>Free Clarity Call</h3>
-      <p>A starting conversation to understand what's going on and determine the best next step for your situation.</p>
-    </div>
-  </div>
-</section>
-
-<section class="results">
-  <div class="section-head">
-    <h2>Imagine Feeling...</h2>
-    <p>Financial clarity is not just about numbers. It is about finally feeling in control.</p>
-  </div>
-
-  <div class="result-grid">
-    <div class="result">Confident opening your bank account</div>
-    <div class="result">Organized before tax season</div>
-    <div class="result">Clear on where your money is going</div>
-    <div class="result">In control of your business finances</div>
-    <div class="result">Less stressed about what comes next</div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="about-grid">
-    <img class="about-photo" src="IMG_9697.jpg" alt="Kinney-Anne Byrd, founder of Wealth with KB">
-
-    <div>
-      <div class="eyebrow">Meet the founder</div>
-      <h2>Hi, I’m Kinney-Anne.</h2>
+  <header class="hero">
+    <div class="hero-box">
+      <img class="hero-logo" src="logo.png" alt="Wealth with KB logo">
+      <div class="eyebrow">Boutique bookkeeping & financial organization</div>
+      <h1>Financial Support That Makes Sense</h1>
+      <div class="tagline">From Financial Chaos to Financial Clarity</div>
       <p>
-        I'm a Xero Certified Advisor and QuickBooks Online Certified ProAdvisor with experience helping
-        individuals and small business owners organize their finances, clean up bookkeeping, and create
-        systems that bring clarity and confidence.
+        Wealth with KB helps individuals and small business owners organize their finances,
+        clean up bookkeeping, and build confidence with their money through practical,
+        judgment-free support.
       </p>
-      <p>
-        I created Wealth with KB because finances shouldn't feel overwhelming. Whether you're trying to
-        understand your personal finances, get caught up on bookkeeping, or simply feel more organized,
-        my goal is to provide practical guidance in a way that feels approachable and judgment-free.
-      </p>
-      <p>
-        Financial clarity creates confidence, and that's exactly what I help my clients build.
-      </p>
-
-      <div class="why-list">
-        <div class="why-item">Clear communication</div>
-        <div class="why-item">Personalized support</div>
-        <div class="why-item">Organized systems</div>
-        <div class="why-item">Practical recommendations</div>
-        <div class="why-item">Small business experience</div>
-        <div class="why-item">Judgment-free guidance</div>
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://forms.gle/aezg5iboGmVgBV8W8" target="_blank">Book a Free Clarity Call</a>
+        <a class="btn btn-secondary" href="#services">Explore Services</a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="process" id="process">
-  <div class="section-head">
-    <h2>A simple process for getting started.</h2>
-    <p>No pressure, no confusion, and no guessing what comes next.</p>
-  </div>
-
-  <div class="steps">
-    <div class="step">
-      <div class="num">1</div>
-      <h3>Book</h3>
-      <p>Start with a free Clarity Call so we can understand what you need.</p>
-    </div>
-
-    <div class="step">
-      <div class="num">2</div>
-      <h3>Assess</h3>
-      <p>We’ll review your situation and identify the best path forward.</p>
-    </div>
-
-    <div class="step">
-      <div class="num">3</div>
-      <h3>Organize</h3>
-      <p>We’ll clean up, sort out, or structure your finances based on your goals.</p>
-    </div>
-
-    <div class="step">
-      <div class="num">4</div>
-      <h3>Move Forward</h3>
-      <p>You’ll leave with more clarity, confidence, and practical next steps.</p>
-    </div>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <div class="section-head">
-    <h2>Frequently Asked Questions</h2>
-    <p>Not sure where to start? That is exactly what the Clarity Call is for.</p>
+  <div class="trust">
+    <div>Xero Certified Advisor</div>
+    <div>QuickBooks Online Certified ProAdvisor</div>
+    <div>Bookkeeping & Cleanup Projects</div>
+    <div>Personal Finance Support</div>
   </div>
 
-  <div class="faq-wrap">
-    <div class="faq-item">
-      <h3>Do I need monthly bookkeeping?</h3>
-      <p>Not necessarily. Some clients need a one-time cleanup project, while others benefit from ongoing monthly support.</p>
+  <section>
+    <div class="section-head">
+      <h2>Who We Help</h2>
+      <p>
+        Whether you're trying to get organized, catch up, or finally understand where your money is going,
+        Wealth with KB helps you find the next best step.
+      </p>
     </div>
 
-    <div class="faq-item">
-      <h3>Do you work with personal finances?</h3>
-      <p>Yes. Wealth with KB supports both personal and business financial organization.</p>
+    <div class="grid-5">
+      <div class="mini-card">Small Business Owners</div>
+      <div class="mini-card">Service-Based Businesses</div>
+      <div class="mini-card">Beauty Professionals</div>
+      <div class="mini-card">Freelancers & Creatives</div>
+      <div class="mini-card">Individuals Seeking Clarity</div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-head">
+      <h2>Services designed around real life.</h2>
+      <p>
+        No confusing packages. No judgment. Just practical financial support based on what you actually need.
+      </p>
     </div>
 
-    <div class="faq-item">
-      <h3>What if I’m not sure which service I need?</h3>
-      <p>Start with a Free Clarity Call and we’ll determine the best next step together.</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon">💰</div>
+        <h3>The Money Reset</h3>
+        <p>Personal finance support to organize your bills, review spending habits, and create a clearer plan for your money.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>The Business Reset</h3>
+        <p>Financial organization and bookkeeping support for business owners who need structure, clarity, and confidence.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧹</div>
+        <h3>The Cleanup Project</h3>
+        <p>Catch-up bookkeeping and reconciliation support for businesses that have fallen behind or need a fresh start.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>The Growth Plan</h3>
+        <p>Ongoing monthly support to help you stay organized, informed, and prepared year-round.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✨</div>
+        <h3>Custom Packages</h3>
+        <p>Every financial situation is different. Custom solutions are available based on your goals and level of support needed.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">☕</div>
+        <h3>Free Clarity Call</h3>
+        <p>A starting conversation to understand what's going on and determine the best next step for your situation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="results">
+    <div class="section-head">
+      <h2>Imagine Feeling...</h2>
+      <p>Financial clarity is not just about numbers. It is about finally feeling in control.</p>
     </div>
 
-    <div class="faq-item">
-      <h3>Do you offer custom packages?</h3>
-      <p>Absolutely. Every client situation is different, and custom solutions are available based on your goals and support needs.</p>
+    <div class="grid-5">
+      <div class="mini-card">Confident opening your bank account</div>
+      <div class="mini-card">Organized before tax season</div>
+      <div class="mini-card">Clear on where your money is going</div>
+      <div class="mini-card">In control of your business finances</div>
+      <div class="mini-card">Less stressed about what comes next</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="cta">
-  <h2>Ready to get clear on your finances?</h2>
-  <p>
-    Take the first step with a Free Clarity Call. Tell me what's going on,
-    and we'll create a plan that makes sense for you.
-  </p>
-  <a class="btn" href="https://forms.gle/aezg5iboGmVgBV8W8" target="_blank">Book a Free Clarity Call</a>
-</section>
+  <section class="about" id="about">
+    <div class="about-grid">
+      <img class="about-photo" src="IMG_9697.jpg" alt="Kinney-Anne Byrd, founder of Wealth with KB">
 
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>Wealth with KB</h3>
-      <p>From Financial Chaos to Financial Clarity</p>
-      <p>Boutique bookkeeping, cleanup, and financial organization support.</p>
+      <div>
+        <div class="eyebrow">Meet the founder</div>
+        <h2>Hi, I’m Kinney-Anne.</h2>
+        <p>
+          I'm a Xero Certified Advisor and QuickBooks Online Certified ProAdvisor with experience helping
+          individuals and small business owners organize their finances, clean up bookkeeping, and create
+          systems that bring clarity and confidence.
+        </p>
+        <p>
+          I created Wealth with KB because finances shouldn't feel overwhelming. Whether you're trying to
+          understand your personal finances, get caught up on bookkeeping, or simply feel more organized,
+          my goal is to provide practical guidance in a way that feels approachable and judgment-free.
+        </p>
+        <p>
+          Financial clarity creates confidence, and that's exactly what I help my clients build.
+        </p>
+
+        <div class="why-list">
+          <div class="why-item">Clear communication</div>
+          <div class="why-item">Personalized support</div>
+          <div class="why-item">Organized systems</div>
+          <div class="why-item">Practical recommendations</div>
+          <div class="why-item">Small business experience</div>
+          <div class="why-item">Judgment-free guidance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="section-head">
+      <h2>A simple process for getting started.</h2>
+      <p>No pressure, no confusion, and no guessing what comes next.</p>
     </div>
 
-    <div>
-      <h3>Contact</h3>
-      <p>Phone/Text: (254) 300-8240</p>
-      <p>Email: hello@wealthwithkb.com</p>
-      <p>Website: wealthwithkb.com</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Book</h3>
+        <p>Start with a free Clarity Call so we can understand what you need.</p>
+      </div>
+
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Assess</h3>
+        <p>We’ll review your situation and identify the best path forward.</p>
+      </div>
+
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Organize</h3>
+        <p>We’ll clean up, sort out, or structure your finances based on your goals.</p>
+      </div>
+
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Move Forward</h3>
+        <p>You’ll leave with more clarity, confidence, and practical next steps.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="section-head">
+      <h2>Frequently Asked Questions</h2>
+      <p>Not sure where to start? That is exactly what the Clarity Call is for.</p>
     </div>
 
-    <div>
-      <h3>Connect</h3>
-      <a href="https://www.facebook.com/wealthwithkb/" target="_blank">Facebook</a>
-      <a href="https://www.linkedin.com/company/bookkeepingbybyrdy/" target="_blank">LinkedIn</a>
-      <a href="https://forms.gle/aezg5iboGmVgBV8W8" target="_blank">Book a Free Clarity Call</a>
-    </div>
-  </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <h3>Do I need monthly bookkeeping?</h3>
+        <p>Not necessarily. Some clients need a one-time cleanup project, while others benefit from ongoing monthly support.</p>
+      </div>
 
-  <div class="copy">
-    © 2026 Wealth with KB. All rights reserved.
-  </div>
-</footer>
+      <div class="faq-item">
+        <h3>Do you work with personal finances?</h3>
+        <p>Yes. Wealth with KB supports both personal and business financial organization.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What if I’m not sure which service I need?</h3>
+        <p>Start with a Free Clarity Call and we’ll determine the best next step together.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do you offer custom packages?</h3>
+        <p>Absolutely. Every client situation is different, and custom solutions are available based on your goals and support needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to get clear on your finances?</h2>
+    <p>
+      Take the first step with a Free Clarity Call. Tell me what's going on,
+      and we'll create a plan that makes sense for you.
+    </p>
+    <a class="btn" href="https://forms.gle/aezg5iboGmVgBV8W8" target="_blank">Book a Free Clarity Call</a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Wealth with KB</h3>
+        <p>From Financial Chaos to Financial Clarity</p>
+        <p>Boutique bookkeeping, cleanup, and financial organization support.</p>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>Phone/Text: (254) 300-8240</p>
+        <p>Email: hello@wealthwithkb.com</p>
+        <p>Website: wealthwithkb.com</p>
+      </div>
+
+      <div>
+        <h3>Connect</h3>
+        <a href="https://www.facebook.com/wealthwithkb/" target="_blank">Facebook</a>
+        <a href="https://www.linkedin.com/company/bookkeepingbybyrdy/" target="_blank">LinkedIn</a>
+        <a href="https://forms.gle/aezg5iboGmVgBV8W8" target="_blank">Book a Free Clarity Call</a>
+      </div>
+    </div>
+
+    <div class="copy">
+      © 2026 Wealth with KB. All rights reserved.
+    </div>
+  </footer>
 
 </body>
 </html>
